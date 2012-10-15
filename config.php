@@ -26,6 +26,8 @@
 // The name of the theme
 $THEME->name = 'bumobile';
 
+$THEME->mobile = true;
+
 // This theme relies on canvas and of course base themes
 $THEME->parents = array(
     'canvas',

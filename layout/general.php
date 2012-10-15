@@ -109,12 +109,16 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $OUTPUT->pix_url('m2m2x', 'theme')?>" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $OUTPUT->pix_url('m2m', 'theme')?>" />
     <link rel="apple-touch-icon-precomposed" href="<?php echo $OUTPUT->pix_url('m2m', 'theme')?>" />
+    <link rel="apple-touch-startup-image" href="<?php echo $OUTPUT->pix_url('m2ms', 'theme')?>" />
+    
 
     <meta name="description" content="<?php echo strip_tags(format_text($SITE->summary, FORMAT_HTML)) ?>" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
 
     <?php echo $OUTPUT->standard_head_html() ?>
 </head>
@@ -123,7 +127,15 @@ echo $OUTPUT->doctype() ?>
     <div id="<?php p($PAGE->bodyid) ?>PAGE" data-role="page" class="generalpage <?php echo 'ajaxedclass '; p($PAGE->bodyclasses.' '.join(' ', $bodyclasses));  ?> <?php if ($hasmyblocks && $usercol) { echo 'has-myblocks'; } ?> " data-title="<?php p($SITE->shortname) ?>">
         <!-- start header -->
         <div data-role="header" <?php echo($datatheme);?> class="bumobileheader" data-position="fixed">
-            <h1><?php echo $PAGE->heading ?></h1>
+            <h1>
+                <?php 
+                    if($PAGE->heading == $SITE->shortname) { 
+                        echo '<img src="'.$OUTPUT->pix_url('mobilelogo', 'theme').'" />';
+                    } else {
+                        echo $PAGE->heading;
+                    }
+                ?>
+            </h1>
             <?php if (isloggedin() && $mypagetype != 'site-index') { ?>
             <a class="ui-btn-right" data-icon="home" href="<?php p($CFG->wwwroot) ?>" data-iconpos="notext" data-ajax="false"><?php p(get_string('home')); ?></a>
             <?php } else if (!isloggedin()) {

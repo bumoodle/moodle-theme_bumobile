@@ -237,7 +237,7 @@ div.categorylist div.category {
     padding-bottom: .4em;
 }
 /* mod-indent change 11/25/10 to fix ... after activity names */
-#completionprogressid.completionprogress {
+#completionprogressid {
     display: none;
     font-size: 0.7em;
     position: absolute;
@@ -413,7 +413,7 @@ li.activity.label {
 li.label .no-overflow ul, li.label .no-overflow ul li {
     list-style-position: inside;
 }
-span.instancename {
+span.   display: none !important;instancename {
     font-size: 110%;
 }
 .path-course-view .section .content {
@@ -470,10 +470,7 @@ input[name="mailnow"] {
 .mform .required {
     color:inherit;
 }
-.loginbox .loginform .form-input #username, .loginbox .loginform .form-input #password {
-    margin: 0 0 .4em;
-}
-.loginbox .loginform .form-input #username, .loginbox .loginform .form-input #password {
+.loginbox .loginform .form-input input {
     border: 1px solid #ccc !important;
     color: inherit !important;
     font-family: inherit !important;
@@ -481,6 +478,10 @@ input[name="mailnow"] {
     line-height: 1.4;
     padding: .4em !important;
     width: 98% !important;
+    margin: 0 0 .4em;
+}
+.loginbox .loginform label {
+    font-size: 14px !important;
 }
 .form-input #password {
     margin-bottom: 1.2em !important;
@@ -493,8 +494,10 @@ input[name="mailnow"] {
 }
 .loginbox .loginform .form-label {
     float: none;
-    text-align: center;
+    text-align: left;
     width: auto;
+    font-size: 16px;
+    margin: 5px;
 }
 .loginbox .loginform .form-input {
     float: none;
@@ -503,6 +506,9 @@ input[name="mailnow"] {
 .loginbox h2 {
     margin: 0 0;
     padding: 0 0;
+}
+.loginbox.twocolumns .signuppanel {
+    display: none;
 }
 .mform fieldset div {
 margin:0;
@@ -656,6 +662,11 @@ div.discussioncontrols {
 .loginbox.twocolumns {
     width: 100%;
     margin: 0;
+}
+.loginbox h2 {
+    text-align: center !important;
+    padding: 2px !important;
+    margin: 5px;
 }
 .loginbox.twocolumns .loginpanel {
     float: none;
@@ -1649,6 +1660,33 @@ div.tablets, #sliderdiv, .has-myblocks .jsetsbar {
     height: 100%;
     max-width: 100px;
     max-height: 100px;
+}
+.loginbox .loginpanel .desc {
+    display: none !important;
+}
+.coursebox {
+    margin-bottom: -10px;
+}
+.coursebox .summary {
+    display: none !important;
+}
+.coursebox .info {
+    width: 100%;
+}
+.coursebox .teachers {
+    display: none;
+}
+#coursesearch {
+    display: none;
+}
+.path-course-view .completionprogress {
+    display: none !important;
+}
+.path-course-view li.activity span.autocompletion, .path-course-view li.activity form.togglecompletion {
+    display: none !important;
+}
+.path-course-view .summary {
+    font-size: 12px;
 }
 /** Custom CSS **/
 [[setting:customcss]]

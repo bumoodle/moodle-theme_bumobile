@@ -1,7 +1,8 @@
 $(document).bind("mobileinit", function(){
 //mobile init stuff 11/12/10
 //turn off ajax forms...
-$.mobile.defaultPageTransition = "slide";
+$.mobile.defaultPageTransition = 'none';
+$.mobile.defaultDialogTransition = 'none';
 });
 
 $(document).ready(function() {
